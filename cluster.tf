@@ -22,11 +22,11 @@ resource "aws_docdb_subnet_group" "docdb" {
 }
 
 Creates the nodes needed for the created DOCDB Cluster
-resource "aws_docdb_cluster_instance" "cluster_instances" {
-  # count              = var.DOCDB_INSTANCE_COUNT
-    count              = 1
-  identifier         = "roboshop-docdb-${var.ENV}"
-  cluster_identifier = aws_docdb_cluster.docdb.id
-  instance_class     = var.DOCDB_PORT_INSTANCE_CLASS
-    instance_class     = "db.t3.medium"
-}
+# resource "aws_docdb_cluster_instance" "cluster_instances" {
+#   # count              = var.DOCDB_INSTANCE_COUNT
+#     count              = 1
+#   identifier         = "roboshop-docdb-${var.ENV}"
+#   cluster_identifier = aws_docdb_cluster.docdb.id
+#   instance_class     = var.DOCDB_PORT_INSTANCE_CLASS
+#     instance_class     = "db.t3.medium"
+# }
