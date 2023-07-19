@@ -4,10 +4,10 @@ resource "aws_docdb_cluster" "docdb" {
   engine                 = "docdb"
 #   master_username        =  local.DOCDB_USERNAME
 #   master_password        =  local.DOCDB_PASSWORD
-  master_username        =  "admin1"
-  master_password        =  "roboshop1"
+  master_username        =  "foo"
+  master_password        =  "barbar8"
   db_subnet_group_name   = aws_docdb_subnet_group.docdb.name
-  vpc_security_group_ids = [aws_security_group.allows_docdb.id]
+  # vpc_security_group_ids = [aws_security_group.allows_docdb.id]
   skip_final_snapshot    = true     # prevents taking snapshot during termination of the instance.
 }
 
