@@ -11,8 +11,8 @@ command = <<EOF
   wget https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
   unzip -o mongodb.zip 
   cd mongodb-main 
-  mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint}:27017 --sslCAFile global-bundle.pem --username foo --password barbar8m < catalogue.js
-  mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint}:27017 --sslCAFile global-bundle.pem --username foo --password barbar8m < users.js
+  mongo --tls --host ${aws_docdb_cluster.docdb.endpoint}:27017 --tlsCAFile global-bundle.pem --username foo --password barbar8m < catalogue.js
+  mongo --tls --host ${aws_docdb_cluster.docdb.endpoint}:27017 --tlsCAFile global-bundle.pem --username foo --password barbar8m < users.js
 EOF   
   }
 }
